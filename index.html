@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1d0c18">
+  <meta name="description" content="Una historia hecha con amor, capítulo a capítulo.">
+  <title>Para Angélica — Nuestra historia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .photo-main{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:1rem;margin:1rem 0 2rem}
+    .time-card{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem;margin:1.25rem 0 2rem;text-align:center}
+    .time-card div{padding:.8rem .25rem;border:1px solid var(--line);border-radius:.8rem;background:rgba(255,255,255,.04)}
+    .time-card b{display:block;font:clamp(1.35rem,5vw,2rem) var(--serif);color:#f1a6be}.time-card small{color:var(--muted);font-size:.65rem;text-transform:uppercase;letter-spacing:.08em}
+    @media(max-width:420px){.time-card{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+  <button class="sound" id="soundButton" aria-label="Reproducir música" aria-pressed="false">♫ <span>Música</span></button>
+  <audio id="music" loop preload="none"><source src="assets/nuestra-cancion.mp3" type="audio/mpeg"></audio>
+
+  <main>
+    <section class="chapter hero active" data-chapter="0" aria-labelledby="title-0">
+      <div class="eyebrow">Una historia para ti</div>
+      <p class="date">29 DE MAYO DE 2025</p>
+      <h1 id="title-0">Tengo algo que<br><em>quiero decirte…</em></h1>
+      <p class="lead">Mi lechuzita, preparé este pequeño rincón para recordarte lo especial que eres para mí.</p>
+      <button class="primary next">Descubrirlo <span>→</span></button>
+      <p class="hint">Hecho con calma, cariño y mucha intención.</p>
+    </section>
+
+    <section class="chapter" data-chapter="1" aria-labelledby="title-1">
+      <div class="card intro-card">
+        <p class="step">01 · El comienzo</p>
+        <img class="photo-main" src="assets/foto-inicio.jpg" alt="Angélica, la persona que ilumina los días de Juan">
+        <h2 id="title-1">Desde que llegaste, mis días tienen <em>otra luz.</em></h2>
+        <p>No porque todo sea perfecto, sino porque compartir la vida contigo hace que lo cotidiano se sienta extraordinario.</p>
+        <p class="signature">Angélica, eres esa persona que siempre soñé encontrar.</p>
+        <p class="step">Nuestro tiempo juntos</p>
+        <div class="time-card" id="loveCounter" aria-label="Tiempo desde que comenzó nuestra relación">
+          <div><b id="counterYears">0</b><small>años</small></div><div><b id="counterMonths">0</b><small>meses</small></div><div><b id="counterDays">0</b><small>días</small></div><div><b id="counterHours">0</b><small>horas</small></div>
+        </div>
+      </div>
+      <nav class="controls"><button class="ghost prev">← Atrás</button><button class="primary next">Seguir <span>→</span></button></nav>
+    </section>
+
+    <section class="chapter" data-chapter="2" aria-labelledby="title-2">
+      <div class="section-head"><p class="step">02 · Lo que admiro</p><h2 id="title-2">Hay tanto que amo <em>de ti.</em></h2><p>Toca cada tarjeta para descubrirlo.</p></div>
+      <div class="love-grid">
+        <button class="love-note"><b>01</b><span>Cómo expresas tu amor</span><small>Amo la ternura con la que me haces sentir querido, osito tuyo.</small></button>
+        <button class="love-note"><b>02</b><span>Tus habilidades</span><small>Me asombra todo lo que puedes crear, aprender y hacer. Te admiro muchísimo.</small></button>
+        <button class="love-note"><b>03</b><span>Tus detalles</span><small>El cuaderno de nuestra canción, el cartel de nuestro primer año y tus cartas viven en mi memoria.</small></button>
+        <button class="love-note"><b>04</b><span>Tu autenticidad</span><small>Esa forma tan tuya de hacer especial cada momento.</small></button>
+        <button class="love-note"><b>05</b><span>Tu fortaleza</span><small>Admiro que no te rindas, que cuides tu vida y que sigas construyendo tus propios sueños.</small></button>
+        <button class="love-note"><b>06</b><span>Todo lo que eres</span><small>No una idea perfecta: tú, real, única e increíble.</small></button>
+      </div>
+      <nav class="controls"><button class="ghost prev">← Atrás</button><button class="primary next">Nuestros recuerdos <span>→</span></button></nav>
+    </section>
+
+    <section class="chapter" data-chapter="3" aria-labelledby="title-3">
+      <div class="section-head"><p class="step">03 · Nosotros</p><h2 id="title-3">Momentos que <em>guardo cerca.</em></h2><p>Pequeños instantes que se volvieron inolvidables por vivirlos contigo. Toca una foto para recordar.</p></div>
+      <div class="album">
+        <button class="memory" data-caption="Caminar contigo de noche hacia tu casa, después de acompañarte al programa del colegio donde bailaste, fue uno de esos momentos sencillos que guardo con muchísimo cariño. Me encantó estar presente para ti.">
+          <img src="assets/recuerdo-1.jpg" alt="Angélica durante el programa de baile de su colegio">
+          <span><b>UNA NOCHE A TU LADO</b><small>Nuestro recuerdo</small></span>
+        </button>
+        <button class="memory" data-caption="Te veías hermosa con aquel enterizo, posando con las flores que te regalé. Me hizo muy feliz poder expresarte mi cariño y guardar para siempre tu sonrisa en esta foto.">
+          <img src="assets/recuerdo-2.jpg" alt="Angélica mostrando las flores que Juan le regaló">
+          <span><b>TÚ Y MIS FLORES</b><small>Una sonrisa hermosa</small></span>
+        </button>
+        <button class="memory" data-caption="Nosotros dos mostrando las cartas de UNO Hot Wheels después de jugar tantas partidas. Contigo, hasta una tarde de juegos se convierte en uno de mis recuerdos favoritos.">
+          <img src="assets/recuerdo-3.jpg" alt="Juan y Angélica mostrando sus cartas de UNO Hot Wheels">
+          <span><b>NUESTRAS PARTIDAS</b><small>UNO Hot Wheels</small></span>
+        </button>
+      </div>
+      <dialog id="memoryDialog"><button class="dialog-close" aria-label="Cerrar">×</button><p id="memoryCaption"></p></dialog>
+      <nav class="controls"><button class="ghost prev">← Atrás</button><button class="primary next">Tengo una pregunta <span>→</span></button></nav>
+    </section>
+
+    <section class="chapter playful" data-chapter="4" aria-labelledby="title-4">
+      <div class="question-card">
+        <p class="step">04 · Una pregunta importante</p>
+        <div class="heart-mark">♡</div>
+        <h2 id="title-4">¿Sabes cuánto <em>te quiero?</em></h2>
+        <p id="quizMessage">Elige con cuidado… aunque las dos respuestas se quedan cortas.</p>
+        <div class="answers"><button id="muchButton" class="ghost">Muchísimo</button><button id="moreButton" class="primary">Todavía más</button></div>
+      </div>
+      <nav class="controls"><button class="ghost prev">← Atrás</button><button class="primary next" id="quizNext" disabled>Leer mi carta <span>→</span></button></nav>
+    </section>
+
+    <section class="chapter letter-section" data-chapter="5" aria-labelledby="title-5">
+      <div class="letter">
+        <p class="step">05 · Para ti</p>
+        <h2 id="title-5">Mi querida <em>Angélica,</em></h2>
+        <p>Admiro profundamente la persona que eres: tu ternura, tus increíbles habilidades y esa manera tan especial que tienes de convertir el cariño en detalles. El cuaderno inspirado en nuestra canción, el cartel por nuestro primer año y aquella carta con parejas de películas y series —imaginando que seríamos nosotros en otros universos— son tesoros que nunca quiero olvidar.</p>
+        <p>También sé que estamos atravesando un momento difícil y que ya me has dicho qué cosas te duelen. Quiero tomar tus palabras en serio: escuchar sin defenderme, cuidar mis palabras, respetar tus límites y reconocer mis errores. No quiero prometer perfección ni llamarme el mejor novio del mundo; quiero esforzarme para ser cada día un mejor novio para ti y demostrarlo con hechos constantes.</p>
+        <p>Tu bienestar importa. Tus sentimientos son válidos y nunca quiero que sientas que debes cargar con los míos. Deseo que nuestro amor pueda florecer con diálogo, confianza, límites sanos y el esfuerzo de ambos, siempre respetando lo que cada uno necesita.</p>
+        <p>Te amo por quien eres, no por lo que haces por mí. Y agradezco cada día en el que eliges compartir un pedacito de tu vida conmigo.</p>
+        <p>Mi lechuzita, amo la forma en que expresas tu amor. Gracias por compartir tu mundo conmigo y por llamarme tu osito.</p>
+        <p class="letter-sign">Con todo mi amor,<br><em>Juan, tu osito</em></p>
+      </div>
+      <nav class="controls"><button class="ghost prev">← Atrás</button><button class="primary next">Mi promesa <span>→</span></button></nav>
+    </section>
+
+    <section class="chapter" data-chapter="6" aria-labelledby="title-6">
+      <div class="section-head"><p class="step">06 · Hacia adelante</p><h2 id="title-6">Quiero construir un amor que se sienta <em>seguro y bonito.</em></h2></div>
+      <div class="promise-list">
+        <article><span>01</span><div><h3>Tomar en cuenta tus palabras</h3><p>Escuchar lo que te duele sin minimizarlo ni ponerme a la defensiva, buscando comprenderte de verdad.</p></div></article>
+        <article><span>02</span><div><h3>Ser mejor con acciones</h3><p>Que mi deseo de ser un mejor novio se note en mis palabras, decisiones y cuidados cotidianos.</p></div></article>
+        <article><span>03</span><div><h3>Respetar tus tiempos</h3><p>El amor también es espacio, límites, paciencia y libertad para decidir.</p></div></article>
+        <article><span>04</span><div><h3>Crecer a tu lado</h3><p>Aprender de mis errores y buscar apoyo cuando lo necesite.</p></div></article>
+      </div>
+      <nav class="controls"><button class="ghost prev">← Atrás</button><button class="primary next">Una última cosa <span>→</span></button></nav>
+    </section>
+
+    <section class="chapter finale" data-chapter="7" aria-labelledby="title-7">
+      <div class="rings" aria-hidden="true"><i></i><i></i></div>
+      <p class="step">Nuestro futuro</p>
+      <h2 id="title-7">Si algún día los dos elegimos dar ese paso…</h2>
+      <p class="future">Sueño con que algún día podamos formar un hogar, apoyarnos en nuestras metas y vivir la vida al máximo: desde disfrutar los días tranquilos hasta saltar juntos en paracaídas y descubrir muchas aventuras. Y cuando sea nuestro momento, me haría profundamente feliz preguntarte si quieres ser mi esposa.</p>
+      <p class="choice">Sin prisas ni presión. Solo un futuro que me ilusiona imaginar contigo.</p>
+      <button class="primary" id="revealButton">Abrir mi último mensaje</button>
+      <div class="final-message" id="finalMessage" aria-live="polite"><span>Te elijo con libertad,<br>respeto y amor.</span><b>Te amo, Angélica, mi lechuzita.</b><small>Mi amor por ti es amor verdadero. Hoy, mañana y mientras ambos elijamos caminar juntos.</small></div>
+      <button class="restart" id="restartButton">↻ Volver al comienzo</button>
+    </section>
+  </main>
+
+  <div class="progress" aria-label="Progreso de la historia"><span id="progressBar"></span></div>
+  <p class="chapter-count"><span id="currentChapter">1</span> / 8</p>
+  <script src="script.js"></script>
+</body>
+</html>
